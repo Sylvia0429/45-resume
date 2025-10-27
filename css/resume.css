@@ -167,7 +167,7 @@ a {
 /* line 195, ../sass/resume.scss */
 .section .section-title i.icon-basic::before {
   content: "";
-  background-image: url("../Images/icon-pic/face_6.png");
+  background-image: url("../images/icon-pic/face_6.png");
   width: 20px;
   height: 20px;
   display: inline-block;
@@ -183,7 +183,7 @@ a {
 /* line 208, ../sass/resume.scss */
 .section .section-title i.icon-gear::before {
   content: "";
-  background-image: url("../Images/icon-pic/toys_and_games.png");
+  background-image: url("../images/icon-pic/toys_and_games.png");
   width: 18px;
   height: 18px;
   display: inline-block;
@@ -191,7 +191,7 @@ a {
 /* line 215, ../sass/resume.scss */
 .section .section-title i.icon-monitor::before {
   content: "";
-  background-image: url("../Images/icon-pic/desktop_windows.png");
+  background-image: url("../images/icon-pic/desktop_windows.png");
   width: 18px;
   height: 18px;
   display: inline-block;
@@ -231,7 +231,7 @@ a {
 /* line 246, ../sass/resume.scss */
 .section .section-title i.icon-job-conditions::before {
   content: "";
-  background-image: url("../Images/icon-pic/badge.png");
+  background-image: url("../images/icon-pic/badge.png");
   width: 20px;
   height: 20px;
   display: inline-block;
@@ -267,7 +267,7 @@ a {
 /* line 274, ../sass/resume.scss */
 .section .section-title i.icon-skills::before {
   content: "";
-  background-image: url("../Images/icon-pic/person_play.png");
+  background-image: url("../images/icon-pic/person_play.png");
   width: 20px;
   height: 20px;
   display: inline-block;
@@ -295,7 +295,7 @@ a {
 /* line 296, ../sass/resume.scss */
 .section .section-title i.icon-feature-skill::before {
   content: "";
-  background-image: url("../Images/icon-pic/license.png");
+  background-image: url("../images/icon-pic/license.png");
   width: 20px;
   height: 20px;
   display: inline-block;
@@ -303,7 +303,7 @@ a {
 /* line 303, ../sass/resume.scss */
 .section .section-title i.icon-certificate::before {
   content: "";
-  background-image: url("../Images/icon-pic/license.png");
+  background-image: url("../images/icon-pic/license.png");
   width: 20px;
   height: 20px;
   display: inline-block;
@@ -828,3 +828,4 @@ a {
 }
 
 /*# sourceMappingURL=resume.css.map */
+
