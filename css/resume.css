@@ -1,0 +1,830 @@
+@charset "UTF-8";
+/* line 57, ../sass/resume.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* line 63, ../sass/resume.scss */
+body {
+  font-family: "Microsoft JhengHei", "PingFang TC", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333333;
+  background-color: #f5f5f5;
+}
+
+/* line 72, ../sass/resume.scss */
+.resume-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  min-height: 100vh;
+}
+@media (max-width: 768px) {
+  /* line 72, ../sass/resume.scss */
+  .resume-container {
+    flex-direction: column;
+    margin: 0;
+    box-shadow: none;
+  }
+}
+
+/* line 88, ../sass/resume.scss */
+.left-section {
+  flex: 1;
+  background-color: #f6f6f6;
+  padding: 48px;
+  color: #636466;
+  position: relative;
+}
+/* line 95, ../sass/resume.scss */
+.left-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 208px;
+  /* 控制藍色區塊的高度 */
+  background-color: #27bbee;
+  /* 藍色 */
+  transform: skewY(-20deg);
+  /* 斜線角度 */
+  transform-origin: top left;
+  z-index: 0;
+}
+@media (max-width: 768px) {
+  /* line 88, ../sass/resume.scss */
+  .left-section {
+    padding: 32px 24px;
+  }
+}
+
+/* line 114, ../sass/resume.scss */
+.profile-photo {
+  text-align: center;
+  margin-bottom: 32px;
+  z-index: 2;
+  position: relative;
+}
+/* line 120, ../sass/resume.scss */
+.profile-photo img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #ffffff;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 768px) {
+  /* line 120, ../sass/resume.scss */
+  .profile-photo img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* line 136, ../sass/resume.scss */
+.profile-info {
+  text-align: center;
+  margin-bottom: 48px;
+}
+/* line 140, ../sass/resume.scss */
+.profile-info .name {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1c8184;
+}
+@media (max-width: 768px) {
+  /* line 140, ../sass/resume.scss */
+  .profile-info .name {
+    font-size: 1.5em;
+  }
+}
+/* line 151, ../sass/resume.scss */
+.profile-info .job-title {
+  font-size: 1.25em;
+  font-weight: 300;
+  opacity: 0.9;
+}
+@media (max-width: 768px) {
+  /* line 151, ../sass/resume.scss */
+  .profile-info .job-title {
+    font-size: 16px;
+  }
+}
+
+/* line 162, ../sass/resume.scss */
+a {
+  color: #27bbee;
+}
+
+/* line 167, ../sass/resume.scss */
+.section {
+  margin-bottom: 32px;
+}
+/* line 170, ../sass/resume.scss */
+.section:last-child {
+  margin-bottom: 0;
+}
+/* line 174, ../sass/resume.scss */
+.section .section-title {
+  font-size: 1.25em;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-bottom: 16px;
+}
+/* line 50, ../sass/resume.scss */
+.section .section-title .icon {
+  margin-right: 8px;
+  font-size: 1.25em;
+}
+/* line 179, ../sass/resume.scss */
+.section .section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #e85620;
+}
+/* line 190, ../sass/resume.scss */
+.section .section-title i {
+  margin-right: 8px;
+  width: 20px;
+  text-align: center;
+}
+/* line 195, ../sass/resume.scss */
+.section .section-title i.icon-basic::before {
+  content: "";
+  background-image: url("../Images/icon-pic/face_6.png");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+/* line 202, ../sass/resume.scss */
+.section .section-title i.icon-email::before {
+  content: "✉";
+}
+/* line 205, ../sass/resume.scss */
+.section .section-title i.icon-location::before {
+  content: "📍";
+}
+/* line 208, ../sass/resume.scss */
+.section .section-title i.icon-gear::before {
+  content: "";
+  background-image: url("../Images/icon-pic/toys_and_games.png");
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+/* line 215, ../sass/resume.scss */
+.section .section-title i.icon-monitor::before {
+  content: "";
+  background-image: url("../Images/icon-pic/desktop_windows.png");
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+/* line 222, ../sass/resume.scss */
+.section .section-title i.icon-graduation::before {
+  content: "🎓";
+}
+/* line 225, ../sass/resume.scss */
+.section .section-title i.icon-briefcase::before {
+  content: "💼";
+}
+/* line 228, ../sass/resume.scss */
+.section .section-title i.icon-work-status::before {
+  content: "💼";
+}
+/* line 231, ../sass/resume.scss */
+.section .section-title i.icon-birthday::before {
+  content: "🎂";
+}
+/* line 234, ../sass/resume.scss */
+.section .section-title i.icon-gender::before {
+  content: "👤";
+}
+/* line 237, ../sass/resume.scss */
+.section .section-title i.icon-mobile::before {
+  content: "📱";
+}
+/* line 240, ../sass/resume.scss */
+.section .section-title i.icon-feature::before {
+  content: "⭐";
+}
+/* line 243, ../sass/resume.scss */
+.section .section-title i.icon-website::before {
+  content: "🌐";
+}
+/* line 246, ../sass/resume.scss */
+.section .section-title i.icon-job-conditions::before {
+  content: "";
+  background-image: url("../Images/icon-pic/badge.png");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+/* line 253, ../sass/resume.scss */
+.section .section-title i.icon-schedule::before {
+  content: "⏰";
+}
+/* line 256, ../sass/resume.scss */
+.section .section-title i.icon-work::before {
+  content: "💼";
+}
+/* line 259, ../sass/resume.scss */
+.section .section-title i.icon-industry::before {
+  content: "🏢";
+}
+/* line 262, ../sass/resume.scss */
+.section .section-title i.icon-salary::before {
+  content: "💰";
+}
+/* line 265, ../sass/resume.scss */
+.section .section-title i.icon-location-work::before {
+  content: "📍";
+}
+/* line 268, ../sass/resume.scss */
+.section .section-title i.icon-work-time::before {
+  content: "🕘";
+}
+/* line 271, ../sass/resume.scss */
+.section .section-title i.icon-commute::before {
+  content: "🚗";
+}
+/* line 274, ../sass/resume.scss */
+.section .section-title i.icon-skills::before {
+  content: "";
+  background-image: url("../Images/icon-pic/person_play.png");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+/* line 281, ../sass/resume.scss */
+.section .section-title i.icon-computer::before {
+  content: "💻";
+}
+/* line 284, ../sass/resume.scss */
+.section .section-title i.icon-tools::before {
+  content: "🔧";
+}
+/* line 287, ../sass/resume.scss */
+.section .section-title i.icon-vehicle::before {
+  content: "🚗";
+}
+/* line 290, ../sass/resume.scss */
+.section .section-title i.icon-license::before {
+  content: "📄";
+}
+/* line 293, ../sass/resume.scss */
+.section .section-title i.icon-language::before {
+  content: "🌏";
+}
+/* line 296, ../sass/resume.scss */
+.section .section-title i.icon-feature-skill::before {
+  content: "";
+  background-image: url("../Images/icon-pic/license.png");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+/* line 303, ../sass/resume.scss */
+.section .section-title i.icon-certificate::before {
+  content: "";
+  background-image: url("../Images/icon-pic/license.png");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+/* line 310, ../sass/resume.scss */
+.section .section-title i.icon-expertise::before {
+  content: "🎯";
+}
+/* line 313, ../sass/resume.scss */
+.section .section-title i.icon-others::before {
+  content: "📝";
+}
+
+/* line 321, ../sass/resume.scss */
+.collapsible .section-title {
+  justify-content: space-between;
+  cursor: pointer;
+}
+/* line 325, ../sass/resume.scss */
+.collapsible .section-title .title-content {
+  display: flex;
+  align-items: center;
+}
+/* line 330, ../sass/resume.scss */
+.collapsible .section-title .toggle-arrow {
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid #1f1f1f;
+  border-bottom: 2px solid #1f1f1f;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+  margin-left: 16px;
+  flex-shrink: 0;
+}
+/* line 341, ../sass/resume.scss */
+.collapsible .section-title:focus {
+  outline: 2px solid #1db9e8;
+  outline-offset: 4px;
+}
+/* line 348, ../sass/resume.scss */
+.collapsible.collapsed .section-title {
+  margin-bottom: 0;
+}
+/* line 351, ../sass/resume.scss */
+.collapsible.collapsed .section-title .toggle-arrow {
+  transform: rotate(-135deg);
+}
+/* line 356, ../sass/resume.scss */
+.collapsible.collapsed .section-content {
+  display: none;
+}
+
+/* line 364, ../sass/resume.scss */
+.contact-info .contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+/* line 369, ../sass/resume.scss */
+.contact-info .contact-item:last-child {
+  margin-bottom: 0;
+}
+/* line 373, ../sass/resume.scss */
+.contact-info .contact-item i {
+  margin-right: 16px;
+  width: 20px;
+  text-align: center;
+  opacity: 0.8;
+}
+/* line 380, ../sass/resume.scss */
+.contact-info .contact-item span {
+  font-size: 1.1em;
+  word-break: break-word;
+  line-height: 1.4;
+  flex: 1;
+}
+
+/* line 390, ../sass/resume.scss */
+.skills-list,
+.software-list {
+  list-style: none;
+}
+/* line 394, ../sass/resume.scss */
+.skills-list li,
+.software-list li {
+  padding: 8px 0;
+  font-size: 1.1em;
+  position: relative;
+  padding-left: 24px;
+}
+/* line 400, ../sass/resume.scss */
+.skills-list li::before,
+.software-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #000;
+  font-weight: bold;
+}
+/* line 408, ../sass/resume.scss */
+.skills-list li:last-child,
+.software-list li:last-child {
+  border-bottom: none;
+}
+
+/* line 415, ../sass/resume.scss */
+.certificate-list {
+  list-style: none;
+}
+/* line 418, ../sass/resume.scss */
+.certificate-list li {
+  padding: 8px 0;
+  font-size: 1.1em;
+  position: relative;
+  padding-left: 24px;
+  line-height: 1.5;
+}
+/* line 425, ../sass/resume.scss */
+.certificate-list li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 18px;
+  width: 6px;
+  height: 6px;
+  background-color: #636466;
+  border-radius: 50%;
+  font-weight: bold;
+}
+/* line 438, ../sass/resume.scss */
+.certificate-list li:last-child {
+  border-bottom: none;
+}
+
+/* line 446, ../sass/resume.scss */
+.job-conditions-list .condition-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+/* line 451, ../sass/resume.scss */
+.job-conditions-list .condition-item:last-child {
+  margin-bottom: 0;
+}
+/* line 455, ../sass/resume.scss */
+.job-conditions-list .condition-item .condition-label {
+  font-weight: 600;
+  color: #1f1f1f;
+  font-size: 1.1em;
+  margin-right: 8px;
+  flex-shrink: 0;
+  min-width: 120px;
+}
+/* line 464, ../sass/resume.scss */
+.job-conditions-list .condition-item span:last-child {
+  font-size: 1.1em;
+  line-height: 1.4;
+  flex: 1;
+}
+
+/* line 474, ../sass/resume.scss */
+.skills-details-list .skill-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+/* line 479, ../sass/resume.scss */
+.skills-details-list .skill-item:last-child {
+  margin-bottom: 0;
+}
+/* line 483, ../sass/resume.scss */
+.skills-details-list .skill-item .skill-label {
+  font-weight: 600;
+  color: #000;
+  font-size: 1.1em;
+  margin-right: 8px;
+  flex-shrink: 0;
+  min-width: 120px;
+}
+/* line 492, ../sass/resume.scss */
+.skills-details-list .skill-item span:last-child {
+  font-size: 1.1em;
+  line-height: 1.4;
+  flex: 1;
+}
+
+/* line 501, ../sass/resume.scss */
+.right-section {
+  flex: 2;
+  padding: 48px;
+  background: #ffffff;
+}
+@media (max-width: 768px) {
+  /* line 501, ../sass/resume.scss */
+  .right-section {
+    padding: 32px 24px;
+  }
+}
+
+/* line 512, ../sass/resume.scss */
+.education-section,
+.experience-section,
+.expertise-section,
+.autobiography-section {
+  margin-bottom: 48px;
+}
+/* line 518, ../sass/resume.scss */
+.education-section:last-child,
+.experience-section:last-child,
+.expertise-section:last-child,
+.autobiography-section:last-child {
+  margin-bottom: 0;
+}
+/* line 522, ../sass/resume.scss */
+.education-section .section-title,
+.experience-section .section-title,
+.expertise-section .section-title,
+.autobiography-section .section-title {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #636466;
+  margin-bottom: 26px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-bottom: 16px;
+}
+/* line 532, ../sass/resume.scss */
+.education-section .section-title::after,
+.experience-section .section-title::after,
+.expertise-section .section-title::after,
+.autobiography-section .section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #e85620;
+}
+/* line 542, ../sass/resume.scss */
+.education-section .section-title i,
+.experience-section .section-title i,
+.expertise-section .section-title i,
+.autobiography-section .section-title i {
+  margin-right: 10px;
+  margin-top: 6px;
+  color: #1db9e8;
+}
+
+/* line 550, ../sass/resume.scss */
+.autobiography-description {
+  font-size: 1.1em;
+}
+/* line 552, ../sass/resume.scss */
+.autobiography-description p {
+  margin-bottom: 16px;
+  line-height: 1.7;
+  color: #333333;
+}
+/* line 557, ../sass/resume.scss */
+.autobiography-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* line 564, ../sass/resume.scss */
+.timeline-item {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 32px;
+}
+/* line 569, ../sass/resume.scss */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  height: 100%;
+  width: 2px;
+  background: #83c02e;
+  border-radius: 2px;
+}
+/* line 580, ../sass/resume.scss */
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+/* line 584, ../sass/resume.scss */
+.timeline-item .timeline-dot {
+  position: absolute;
+  left: 3px;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  background: #83c02e;
+  border-radius: 50%;
+}
+/* line 595, ../sass/resume.scss */
+.timeline-item .timeline-content .degree,
+.timeline-item .timeline-content .position {
+  font-size: 1.25em;
+  font-weight: 600;
+  color: #1c8184;
+  margin-bottom: 8px;
+}
+/* line 603, ../sass/resume.scss */
+.timeline-item .timeline-content .department,
+.timeline-item .timeline-content .company {
+  font-size: 1.1em;
+  color: #666666;
+  margin-bottom: 8px;
+}
+/* line 610, ../sass/resume.scss */
+.timeline-item .timeline-content .date {
+  font-size: 1.1em;
+  color: #1c8184;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+/* line 617, ../sass/resume.scss */
+.timeline-item .timeline-content .job-description {
+  font-size: 1.1em;
+}
+/* line 619, ../sass/resume.scss */
+.timeline-item .timeline-content .job-description p {
+  margin-bottom: 16px;
+  line-height: 1.7;
+  color: #333333;
+}
+/* line 624, ../sass/resume.scss */
+.timeline-item .timeline-content .job-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* line 635, ../sass/resume.scss */
+.expertise-section .expertise-list .expertise-item {
+  margin-bottom: 32px;
+  padding: 24px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #1c8184;
+}
+/* line 642, ../sass/resume.scss */
+.expertise-section .expertise-list .expertise-item:last-child {
+  margin-bottom: 0;
+}
+/* line 646, ../sass/resume.scss */
+.expertise-section .expertise-list .expertise-item .expertise-name {
+  font-size: 1.25em;
+  font-weight: 600;
+  color: #1c8184;
+  margin-bottom: 8px;
+}
+/* line 653, ../sass/resume.scss */
+.expertise-section .expertise-list .expertise-item .expertise-description {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #333333;
+  margin-bottom: 8px;
+}
+/* line 660, ../sass/resume.scss */
+.expertise-section .expertise-list .expertise-item .expertise-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+/* line 665, ../sass/resume.scss */
+.expertise-section .expertise-list .expertise-item .expertise-tags .tag {
+  display: inline-block;
+  background: #1c8184;
+  color: #ffffff;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+/* line 677, ../sass/resume.scss */
+.expertise-section .expertise-list .expertise-item .expertise-tags .tag:nth-child(even) {
+  background: #18a3d3;
+}
+/* line 681, ../sass/resume.scss */
+.expertise-section .expertise-list .expertise-item .expertise-tags .tag:hover {
+  background: #13585a;
+}
+/* line 686, ../sass/resume.scss */
+.expertise-section .expertise-list .expertise-item .expertise-tags .tag:nth-child(even):hover {
+  background: #1380a5;
+}
+
+@media print {
+  /* line 697, ../sass/resume.scss */
+  body {
+    background: #ffffff;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  /* line 703, ../sass/resume.scss */
+  .resume-container {
+    max-width: none;
+    width: 100%;
+    box-shadow: none;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    min-height: auto;
+    page-break-inside: avoid;
+  }
+
+  /* line 714, ../sass/resume.scss */
+  .right-section {
+    flex: 2;
+    padding: 20px;
+  }
+
+  /* line 719, ../sass/resume.scss */
+  .profile-photo img {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* line 724, ../sass/resume.scss */
+  .profile-info .name {
+    font-size: 20px;
+  }
+
+  /* line 728, ../sass/resume.scss */
+  .profile-info .job-title {
+    font-size: 14px;
+  }
+
+  /* line 732, ../sass/resume.scss */
+  .section-title {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  /* line 737, ../sass/resume.scss */
+  .education-section .section-title,
+  .experience-section .section-title {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  /* line 743, ../sass/resume.scss */
+  .timeline-item {
+    padding-left: 20px;
+    margin-bottom: 16px;
+    page-break-inside: avoid;
+  }
+
+  /* line 750, ../sass/resume.scss */
+  .timeline-content .degree,
+  .timeline-content .position {
+    font-size: 14px;
+  }
+  /* line 755, ../sass/resume.scss */
+  .timeline-content .department,
+  .timeline-content .company {
+    font-size: 12px;
+  }
+  /* line 760, ../sass/resume.scss */
+  .timeline-content .date {
+    font-size: 11px;
+  }
+  /* line 764, ../sass/resume.scss */
+  .timeline-content .job-description p {
+    font-size: 11px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+
+  /* line 771, ../sass/resume.scss */
+  .contact-item span,
+  .skills-list li,
+  .software-list li {
+    font-size: 11px;
+  }
+
+  /* line 778, ../sass/resume.scss */
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* line 784, ../sass/resume.scss */
+  .collapsible .section-title {
+    cursor: default;
+  }
+  /* line 788, ../sass/resume.scss */
+  .collapsible .toggle-arrow {
+    display: none;
+  }
+  /* line 792, ../sass/resume.scss */
+  .collapsible .section-content {
+    display: block !important;
+  }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  /* line 800, ../sass/resume.scss */
+  .resume-container {
+    margin: 24px;
+  }
+
+  /* line 804, ../sass/resume.scss */
+  .left-section {
+    padding: 32px;
+    overflow: hidden;
+  }
+
+  /* line 809, ../sass/resume.scss */
+  .right-section {
+    padding: 32px;
+  }
+
+  /* line 813, ../sass/resume.scss */
+  .profile-photo img {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+/*# sourceMappingURL=resume.css.map */
