@@ -1,0 +1,888 @@
+// 變數定義
+$primary-blue: #1db9e8;
+$secondary-blue: #4dd0ec;
+$dark-blue: #0891b2;
+$white: #ffffff;
+$light-gray: #f5f5f5;
+$dark-gray: #333333;
+$medium-gray: #666666;
+$border-gray: #e0e0e0;
+
+// 字體變數
+$primary-font: "Microsoft JhengHei", "PingFang TC", Arial, sans-serif;
+$font-size-base: 16px;
+$font-size-small: 1.1em;
+$font-size-large: 1.25em;
+$font-size-xl: 1.5em;
+$font-size-xxl: 32px;
+
+// 間距變數
+$spacing-xs: 8px;
+$spacing-sm: 16px;
+$spacing-md: 24px;
+$spacing-lg: 32px;
+$spacing-xl: 48px;
+
+// 響應式斷點
+$mobile: 768px;
+$tablet: 1024px;
+$desktop: 1200px;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin gradient-background {
+  background: linear-gradient(135deg, $primary-blue 0%, $secondary-blue 100%);
+}
+
+@mixin section-title {
+  font-size: $font-size-large;
+  font-weight: 600;
+  color: #1c8184;
+
+  display: flex;
+  align-items: center;
+
+  .icon {
+    margin-right: $spacing-xs;
+    font-size: $font-size-large;
+  }
+}
+
+// 基礎樣式重置
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $primary-font;
+  font-size: $font-size-base;
+  line-height: 1.6;
+  color: $dark-gray;
+  background-color: $light-gray;
+}
+
+// 主容器
+.resume-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: $white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  min-height: 100vh;
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+    margin: 0;
+    box-shadow: none;
+  }
+}
+
+// 左側區域
+.left-section {
+  flex: 1.5;
+  color: #636466;
+  overflow: hidden;
+  margin: $spacing-sm;
+  margin-right: 0;
+  border-bottom: 64px solid #e1f6c3;
+
+  @media (max-width: $mobile) {
+    margin-left: 0;
+    border: none;
+  }
+
+  .left-detail {
+    background-color: #f6f6f6;
+    padding: $spacing-md;
+    height: 100%;
+  }
+
+  @media (max-width: $mobile) {
+    padding: $spacing-lg $spacing-md;
+  }
+}
+
+// 個人照片
+.profile-photo {
+  text-align: center;
+  margin-bottom: $spacing-lg;
+  z-index: 2;
+  position: relative;
+
+  img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid $white;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+    @media (max-width: $mobile) {
+      width: 120px;
+      height: 120px;
+    }
+  }
+}
+
+// 個人資訊
+.profile-info {
+  text-align: center;
+  margin-bottom: $spacing-md;
+  padding-top: 42px;
+
+  @media (max-width: $mobile) {
+    padding-top: 0;
+  }
+
+  .name {
+    font-size: 2.7em;
+    font-weight: 700;
+    margin-bottom: $spacing-xs;
+    color: #000;
+
+    @media (max-width: $mobile) {
+      font-size: $font-size-xl;
+    }
+  }
+
+  .job-title {
+    font-size: $font-size-large;
+    font-weight: 300;
+    opacity: 0.9;
+
+    @media (max-width: $mobile) {
+      font-size: $font-size-base;
+    }
+  }
+}
+
+a {
+  color: #27bbee;
+}
+
+// 區塊樣式
+.section {
+  margin-bottom: $spacing-lg;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .section-title {
+    @include section-title;
+    position: relative;
+    padding-bottom: $spacing-sm;
+
+    // 圖示樣式
+    i {
+      margin-right: $spacing-xs;
+      width: 20px;
+      text-align: center;
+
+      &.icon-basic::before {
+        content: "";
+        background-image: url("../Images/icon-pic/face_6.png");
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+      }
+      &.icon-email::before {
+        content: "✉";
+      }
+      &.icon-location::before {
+        content: "📍";
+      }
+      &.icon-gear::before {
+        content: "";
+        background-image: url("../Images/icon-pic/toys_and_games.png");
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+      }
+      &.icon-monitor::before {
+        content: "";
+        background-image: url("../Images/icon-pic/desktop_windows.png");
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+      }
+      &.icon-graduation::before {
+        content: "🎓";
+      }
+      &.icon-briefcase::before {
+        content: "💼";
+      }
+      &.icon-work-status::before {
+        content: "💼";
+      }
+      &.icon-birthday::before {
+        content: "🎂";
+      }
+      &.icon-gender::before {
+        content: "👤";
+      }
+      &.icon-mobile::before {
+        content: "📱";
+      }
+      &.icon-feature::before {
+        content: "⭐";
+      }
+      &.icon-website::before {
+        content: "🌐";
+      }
+      &.icon-job-conditions::before {
+        content: "";
+        background-image: url("../Images/icon-pic/badge.png");
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+      }
+      &.icon-schedule::before {
+        content: "⏰";
+      }
+      &.icon-work::before {
+        content: "💼";
+      }
+      &.icon-industry::before {
+        content: "🏢";
+      }
+      &.icon-salary::before {
+        content: "💰";
+      }
+      &.icon-location-work::before {
+        content: "📍";
+      }
+      &.icon-work-time::before {
+        content: "🕘";
+      }
+      &.icon-commute::before {
+        content: "🚗";
+      }
+      &.icon-skills::before {
+        content: "";
+        background-image: url("../Images/icon-pic/person_play.png");
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+      }
+      &.icon-computer::before {
+        content: "💻";
+      }
+      &.icon-tools::before {
+        content: "🔧";
+      }
+      &.icon-vehicle::before {
+        content: "🚗";
+      }
+      &.icon-license::before {
+        content: "📄";
+      }
+      &.icon-language::before {
+        content: "🌏";
+      }
+      &.icon-feature-skill::before {
+        content: "";
+        background-image: url("../Images/icon-pic/license.png");
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+      }
+      &.icon-certificate::before {
+        content: "";
+        background-image: url("../Images/icon-pic/license.png");
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+      }
+      &.icon-expertise::before {
+        content: "🎯";
+      }
+      &.icon-others::before {
+        content: "📝";
+      }
+    }
+  }
+}
+
+.collapsible {
+  .section-title {
+    justify-content: space-between;
+    cursor: pointer;
+
+    .title-content {
+      display: flex;
+      align-items: center;
+    }
+
+    .toggle-arrow {
+      width: 12px;
+      height: 12px;
+      border-right: 2px solid #1f1f1f;
+      border-bottom: 2px solid #1f1f1f;
+      transform: rotate(45deg);
+      transition: transform 0.2s ease;
+      margin-left: $spacing-sm;
+      flex-shrink: 0;
+    }
+
+    &:focus {
+      outline: 2px solid $primary-blue;
+      outline-offset: 4px;
+    }
+  }
+
+  &.collapsed {
+    .section-title {
+      margin-bottom: 0;
+
+      .toggle-arrow {
+        transform: rotate(-135deg);
+      }
+    }
+
+    .section-content {
+      display: none;
+    }
+  }
+}
+
+// 聯絡資訊
+.contact-info {
+  .contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: $spacing-sm;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    i {
+      margin-right: $spacing-sm;
+      width: 20px;
+      text-align: center;
+      opacity: 0.8;
+    }
+
+    span {
+      font-size: $font-size-small;
+      word-break: break-word;
+      line-height: 1.4;
+      flex: 1;
+    }
+  }
+}
+
+// 技能清單
+.skills-list,
+.software-list {
+  list-style: none;
+
+  li {
+    padding: $spacing-xs 0;
+    font-size: $font-size-small;
+    position: relative;
+    padding-left: $spacing-md;
+
+    &::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #000;
+      font-weight: bold;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+// 證照清單
+.certificate-list {
+  list-style: none;
+
+  li {
+    padding: $spacing-xs 0;
+    font-size: $font-size-small;
+    position: relative;
+    padding-left: $spacing-md;
+    line-height: 1.5;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 18px;
+      width: 6px;
+      height: 6px;
+      background-color: #636466;
+      border-radius: 50%;
+
+      font-weight: bold;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+// 求職條件清單
+.job-conditions-list {
+  .condition-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: $spacing-sm;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .condition-label {
+      font-weight: 600;
+      color: #1f1f1f;
+      font-size: $font-size-small;
+      margin-right: $spacing-xs;
+      flex-shrink: 0;
+      min-width: 120px;
+    }
+
+    span:last-child {
+      font-size: $font-size-small;
+      line-height: 1.4;
+      flex: 1;
+    }
+  }
+}
+
+// 技能詳細清單
+.skills-details-list {
+  .skill-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: $spacing-sm;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .skill-label {
+      font-weight: 600;
+      color: #000;
+      font-size: $font-size-small;
+      margin-right: $spacing-xs;
+      flex-shrink: 0;
+      min-width: 120px;
+    }
+
+    span:last-child {
+      font-size: $font-size-small;
+      line-height: 1.4;
+      flex: 1;
+    }
+  }
+}
+
+// 右側區域
+.right-section {
+  flex: 2;
+  padding: $spacing-xl;
+  background: $white;
+  padding-top: 154px;
+  border-bottom: 64px solid #e1f6c3;
+  margin-right: $spacing-sm;
+  margin-bottom: $spacing-sm;
+  position: relative;
+
+  // 右上角背景圖片
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 322px;
+    height: 200px;
+    background-image: url("images/bg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top right;
+    z-index: 1;
+  }
+
+  // 確保內容在背景圖片之上
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  @media (max-width: $mobile) {
+    padding: $spacing-lg $spacing-md;
+    margin-right: 0;
+
+    &::before {
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
+
+// 學歷和經歷區塊
+.education-section,
+.experience-section,
+.expertise-section,
+.autobiography-section {
+  margin-bottom: $spacing-xl;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .section-title {
+    font-size: $font-size-xl;
+    font-weight: 600;
+    color: #1c8184;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-bottom: $spacing-sm;
+
+    i {
+      margin-right: 10px;
+      margin-top: 6px;
+      color: $primary-blue;
+    }
+  }
+}
+
+.autobiography-description {
+  font-size: $font-size-small;
+  p {
+    margin-bottom: $spacing-sm;
+    line-height: 1.7;
+    color: $dark-gray;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// 時間軸項目
+.timeline-item {
+  position: relative;
+  margin-bottom: $spacing-lg;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: 3px;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    background: #83c02e; // 綠色圓點
+    border-radius: 50%;
+  }
+
+  .timeline-content:not(:last-child) {
+    padding-bottom: 32px;
+  }
+
+  .timeline-content {
+    .degree,
+    .position {
+      font-size: $font-size-large;
+      font-weight: 600;
+      color: #000;
+      margin-bottom: $spacing-xs;
+    }
+
+    .department,
+    .company {
+      font-size: $font-size-small;
+      color: $medium-gray;
+      margin-bottom: $spacing-xs;
+    }
+
+    .date {
+      font-size: $font-size-small;
+      color: #666666;
+      font-weight: 500;
+      margin-bottom: $spacing-sm;
+    }
+
+    .job-description {
+      font-size: $font-size-small;
+      p {
+        margin-bottom: $spacing-sm;
+        line-height: 1.7;
+        color: $dark-gray;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+// 專長區塊
+.expertise-section {
+  .expertise-list {
+    .expertise-item {
+      margin-bottom: $spacing-lg;
+      padding: $spacing-md;
+      background: #f8f9fa;
+      border-radius: 12px;
+      position: relative;
+
+      // 使用偽元素創建漸層邊框，保持圓角效果
+      &::before {
+        content: "";
+        position: absolute;
+        top: -4px;
+        left: -4px;
+        right: -4px;
+        bottom: -4px;
+        background: linear-gradient(to bottom right, #1abfed 0%, #93dea3 100%);
+        border-radius: 16px;
+        z-index: -1;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .expertise-name {
+        font-size: $font-size-large;
+        font-weight: 600;
+        color: #1c8184;
+        margin-bottom: $spacing-xs;
+      }
+
+      .expertise-description {
+        font-size: $font-size-small;
+        line-height: 1.6;
+        color: $dark-gray;
+        margin-bottom: $spacing-xs;
+      }
+
+      .expertise-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $spacing-xs;
+
+        .tag {
+          display: inline-block;
+          color: #1c8184;
+          font-size: 1em;
+          font-weight: 500;
+          padding: 4px 12px;
+          border-radius: 4px;
+          text-decoration: none;
+          transition: background-color 0.3s ease;
+          border: 2px solid #1c8184;
+
+          // 偶數位置的標籤使用不同背景色
+          &:nth-child(even) {
+            border: 2px solid #18a3d3;
+            color: #18a3d3;
+          }
+
+          &:hover {
+            background: darken(#def2f3, 10%);
+          }
+
+          // 偶數位置標籤的hover效果
+          &:nth-child(even):hover {
+            background: darken(#f6fdff, 10%);
+          }
+        }
+      }
+    }
+  }
+}
+
+// 列印樣式
+@media print {
+  body {
+    background: $white;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .resume-container {
+    max-width: none;
+    width: 100%;
+    box-shadow: none;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    min-height: auto;
+    page-break-inside: avoid;
+  }
+
+  .left-section {
+    margin: 0;
+    border-bottom: none;
+  }
+
+  .right-section {
+    flex: 2;
+    padding: 20px;
+    padding-top: 20px; // 移除大的上邊距
+    margin: 0;
+    border-bottom: none;
+
+    // 列印時保持背景圖片
+    &::before {
+      width: 120px;
+      height: 120px;
+      background-size: contain;
+    }
+  }
+
+  .profile-info {
+    padding-top: 0; // 移除姓名上方的間距
+    margin-bottom: 16px;
+  }
+
+  .profile-photo {
+    margin-bottom: 16px;
+  }
+
+  .profile-photo img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-info .name {
+    font-size: 20px;
+    margin-bottom: 4px; // 縮小姓名下方間距
+  }
+
+  .profile-info .job-title {
+    font-size: 14px;
+  }
+
+  .section-title {
+    font-size: 14px;
+  }
+
+  .education-section .section-title,
+  .experience-section .section-title {
+    font-size: 16px;
+  }
+
+  .timeline-item {
+    padding-left: 20px;
+    margin-bottom: 16px;
+    page-break-inside: avoid;
+  }
+
+  .timeline-content {
+    .degree,
+    .position {
+      font-size: 14px;
+    }
+
+    .department,
+    .company {
+      font-size: 12px;
+    }
+
+    .date {
+      font-size: 11px;
+    }
+
+    .job-description p {
+      font-size: 11px;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+  }
+
+  .contact-item span,
+  .skills-list li,
+  .software-list li {
+    font-size: 11px;
+  }
+
+  // 求職條件和技能項目的列印樣式
+  .condition-item,
+  .skill-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    page-break-inside: avoid;
+
+    .condition-label,
+    .skill-label {
+      font-weight: 600;
+      font-size: 11px;
+      margin-right: 6px;
+      flex-shrink: 0;
+      min-width: 80px; // 縮小最小寬度以適應列印
+      width: 80px; // 固定寬度確保對齊
+    }
+
+    span:last-child {
+      font-size: 11px;
+      line-height: 1.4;
+      flex: 1;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+  }
+
+  // 確保顏色在列印時正確顯示
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .collapsible {
+    .section-title {
+      cursor: default;
+    }
+
+    .toggle-arrow {
+      display: none;
+    }
+
+    .section-content {
+      display: block !important;
+    }
+  }
+}
+
+// 響應式設計 - 平板
+@media (max-width: $tablet) and (min-width: #{$mobile + 1px}) {
+  .resume-container {
+    margin: $spacing-md;
+  }
+
+  .left-section {
+    padding: $spacing-lg;
+    overflow: hidden;
+  }
+
+  .right-section {
+    padding: $spacing-lg;
+  }
+
+  .profile-photo img {
+    width: 130px;
+    height: 130px;
+  }
+}
