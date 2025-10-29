@@ -76,11 +76,41 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   display: flex;
   min-height: 100vh;
+  position: relative;
 
+  // 平板和手機版的背景圖片
+  @media (max-width: $tablet) {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-image: url("images/bg.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top right;
+      z-index: 10;
+    }
+  }
+
+  // 平板版背景圖片尺寸
+  @media (max-width: $tablet) and (min-width: #{$mobile + 1px}) {
+    &::before {
+      width: 250px;
+      height: 160px;
+    }
+  }
+
+  // 手機版設定
   @media (max-width: $mobile) {
     flex-direction: column;
     margin: 0;
     box-shadow: none;
+
+    &::before {
+      width: 180px;
+      height: 120px;
+    }
   }
 }
 
@@ -502,35 +532,34 @@ a {
   margin-bottom: $spacing-sm;
   position: relative;
 
-  // 右上角背景圖片
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 322px;
-    height: 200px;
-    background-image: url("images/bg.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: top right;
-    z-index: 1;
+  // 桌面版右上角背景圖片
+  @media (min-width: #{$tablet + 1px}) {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 322px;
+      height: 200px;
+      background-image: url("images/bg.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top right;
+      z-index: 1;
+    }
+
+    // 確保內容在背景圖片之上
+    > * {
+      position: relative;
+      z-index: 2;
+    }
   }
 
-  // 確保內容在背景圖片之上
-  > * {
-    position: relative;
-    z-index: 2;
-  }
-
+  // 手機響應式設計
   @media (max-width: $mobile) {
     padding: $spacing-lg $spacing-md;
     margin-right: 0;
-
-    &::before {
-      width: 150px;
-      height: 150px;
-    }
+    margin-bottom: 0;
   }
 }
 
@@ -873,7 +902,6 @@ a {
   }
 
   .left-section {
-    padding: $spacing-lg;
     overflow: hidden;
   }
 
