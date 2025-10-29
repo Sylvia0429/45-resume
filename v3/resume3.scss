@@ -619,6 +619,8 @@ a {
     background: none;
     border: none;
     z-index: 2;
+    cursor: pointer;
+    padding-right: 50px; // 為箭頭留出空間
 
     // 綠色背景條 (從第二個字開始)
     &::after {
@@ -627,11 +629,28 @@ a {
       left: 1.8em; // 約從第二個字開始
       top: 50%;
       transform: translateY(-50%);
-      width: calc(100% - 1.8em - 20px);
+      width: calc(100% - 1.8em - 50px); // 調整寬度避免覆蓋箭頭
       height: 60%;
       background-color: #d1ebeb;
       z-index: -1;
       border-radius: 0;
+    }
+
+    // 摺疊箭頭樣式
+    .toggle-arrow {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: transform 0.3s ease;
+      z-index: 3;
+
+      &::after {
+        content: "▼";
+        font-size: $font-size-small; // 約 14.08px
+        color: $primary-color;
+        font-weight: bold;
+      }
     }
 
     @media (max-width: $mobile) {
@@ -639,10 +658,28 @@ a {
       padding: 12px 15px 12px 0;
       padding-left: 15px;
       margin-bottom: 10px;
+      padding-right: 40px; // 手機版縮小箭頭空間
 
       &::after {
         left: 1em; // 手機版稍微調整位置
-        width: calc(100% - 1em - 15px);
+        width: calc(100% - 1em - 40px); // 調整寬度
+      }
+
+      .toggle-arrow {
+        right: 15px;
+      }
+    }
+  }
+
+  // 摺疊功能樣式 (針對 main-content 區域)
+  .collapsible {
+    &.collapsed {
+      .section-title .toggle-arrow {
+        transform: translateY(-50%) rotate(-90deg);
+      }
+
+      .section-content {
+        display: none;
       }
     }
   }
@@ -962,7 +999,7 @@ a {
           border-radius: 4px;
           font-size: $font-size-small; // 約 14.08px
           font-weight: 500;
-          border: 1px solid rgba($secondary-color, 0.2);
+          border: 1px solid rgb(239 148 51 / 20%);
           font-weight: bold;
 
           @media (max-width: $mobile) {

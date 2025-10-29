@@ -549,6 +549,8 @@ a:focus {
   background: none;
   border: none;
   z-index: 2;
+  cursor: pointer;
+  padding-right: 50px;
 }
 .main-content .section-title::after {
   content: "";
@@ -556,11 +558,25 @@ a:focus {
   left: 1.8em;
   top: 50%;
   transform: translateY(-50%);
-  width: calc(100% - 1.8em - 20px);
+  width: calc(100% - 1.8em - 50px);
   height: 60%;
   background-color: #d1ebeb;
   z-index: -1;
   border-radius: 0;
+}
+.main-content .section-title .toggle-arrow {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+  z-index: 3;
+}
+.main-content .section-title .toggle-arrow::after {
+  content: "▼";
+  font-size: 0.8em;
+  color: #2c3e50;
+  font-weight: bold;
 }
 @media (max-width: 480px) {
   .main-content .section-title {
@@ -568,11 +584,21 @@ a:focus {
     padding: 12px 15px 12px 0;
     padding-left: 15px;
     margin-bottom: 10px;
+    padding-right: 40px;
   }
   .main-content .section-title::after {
     left: 1em;
-    width: calc(100% - 1em - 15px);
+    width: calc(100% - 1em - 40px);
   }
+  .main-content .section-title .toggle-arrow {
+    right: 15px;
+  }
+}
+.main-content .collapsible.collapsed .section-title .toggle-arrow {
+  transform: translateY(-50%) rotate(-90deg);
+}
+.main-content .collapsible.collapsed .section-content {
+  display: none;
 }
 
 .section-title {
@@ -876,7 +902,7 @@ a:focus {
   border-radius: 4px;
   font-size: 0.8em;
   font-weight: 500;
-  border: 1px solid rgba(52, 73, 94, 0.2);
+  border: 1px solid rgba(239, 148, 51, 0.2);
   font-weight: bold;
 }
 @media (max-width: 480px) {
